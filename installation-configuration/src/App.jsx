@@ -2,17 +2,17 @@ import { useState } from 'react'
 import Square from './components/Square'
 
 function App() {
+  const totalElement = Array(9).fill(null)
+
+  const handleClick = (props) => {
+    console.log(props);
+  }
+
   return (
     <div className='wrapper'>
-      <Square />
-      <Square />
-      <Square />
-      <Square />
-      <Square />
-      <Square />
-      <Square />
-      <Square />
-      <Square />
+      {totalElement.map((_, index) => (
+        <Square key={index} onSquareClick={() => handleClick(index)} />
+      ))}
     </ div>
   )
 }
